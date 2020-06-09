@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css"/>
+    <title>Dojodachi!!!</title>
+</head>
+
+<body>
+    <div class='container'>
+        <div class='title'>
+            <h1>Chicken Dojodachi</h1>
+        </div>
+
+        <div class="values">
+            <h4> Fullness: <span>@ViewBag.Fullness</span> </h4>
+            <h4> Happiness: <span>@ViewBag.Happiness</span> </h4>
+            <h4> Meals: <span>@ViewBag.Meals</span> </h4>
+            <h4> Energy: <span>@ViewBag.Energy</span> </h4>
+        </div>
+
+        <div class='chicken'>
+        @if(ViewBag.Died == false)
+        {
+            <img src="~/pics/chicken.gif" alt="pixel chicken">
+        }
+        @if(ViewBag.Died == true)
+        {
+            <img src="~/pics/skull.gif" alt="Skull" id="skull">
+        }
+        </div>
+    
+        <hr/>
+
+        <div class="actions">
+            <form action="feed" class="feed" method="POST">
+                <button asp-action="feed">Feed</button>
+            </form>
+
+            <form action="play" method="POST">
+                <button asp-action="play">Play</button>
+            </form>
+
+            <form action="work" method="POST">
+                <button asp-action="work">Work</button>
+            </form>
+            <form action="sleep" method="POST">
+                <button asp-action="sleep">Sleep</button>
+            </form>
+        </div>
+        <hr/>
+        <div class="results">
+            @if(ViewBag.Died == false && ViewBag.Won == false)
+            {
+            <h4 class='messages'> @ViewBag.Message </h4>
+            }
+            @if(ViewBag.Died == true || ViewBag.Won == true)
+            {
+                <div class="died">
+                    <form action="restart" method="POST">
+                        @if(ViewBag.Died == true){<h3> Your Chicken Died, you suck! </h3>}
+                        @if(ViewBag.Won == true){<h3> You Win! Your chicken is having the greatest life! </h3>}
+                        <button> RESTART </button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+.chicken{
+    display: inline-block;
+    border: 5px solid black;
+    border-radius: 5px;
+    margin: 2% auto auto 19%;
+    background-color: lightblue;
+}
+
+#skull{
+    height: 370px;
+}
+
+body{
+    background-color: darkseagreen;
+}
+
+.title{
+    text-align: center;
+    margin-top: 2%;
+    font-family: fantasy;
+}
+
+form{
+    display: inline;
+    margin-right: 2%;
+}
+
+.feed{
+    margin-left: 32%;
+}
+
+button{
+    width: 80px;
+    text-align: center;
+    font-family: fantasy;
+    font-size: large;
+}
+
+.results{
+    text-align: center;
+    margin-top: 5%;
+    font-family: fantasy;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: lightgray;
+    max-height: 100px;
+}
+
+.values{
+    display: inline-block;
+    font-family: fantasy;
+    text-align: right;
+}
+
+span{
+    background-color: lightgray;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+h4{
+    margin-bottom: 15%;
+}
+
+.messages{
+    vertical-align: center;
+}
